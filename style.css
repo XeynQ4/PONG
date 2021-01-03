@@ -1,12 +1,20 @@
 html, body {
     margin: 0;
     padding: 0;
+    font-family: monospace;
+    font-size: 20px;
 }
 canvas {
     display: block;
 }
 .p {
+    color: red;
+}
+
+#button {
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 10px;
     font-family: monospace;
     font-size: 20px;
-    color: red;
 }

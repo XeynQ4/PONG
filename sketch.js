@@ -2,14 +2,15 @@ const width = 600;
 const height = 400;
 const ballWidth = 20;
 const ballSpeed = 5;
+const ballAcc = 1.0005;
 const paddleSpeed = 5;
 const clearance = 10;
-const ballAcc = 1.0001;
 const waitTime = 15;
 const p1Score = document.getElementById("p1");
 const p2Score = document.getElementById("p2");
 let playerOneScore = 0;
 let playerTwoScore = 0;
+let start = false;
 
 let ball;
 let paddle1;
@@ -25,6 +26,11 @@ function setup() {
 }
 
 function draw() {
+    document.getElementById("button").addEventListener("click", () => start = true);
+
+    while (!start) {
+        return;
+    }
     background(51);
     p1Score.innerHTML = `Player One: ${playerOneScore}`;
     p2Score.innerHTML = `Player Two: ${playerTwoScore}`;
